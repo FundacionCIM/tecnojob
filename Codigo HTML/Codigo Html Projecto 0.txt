@@ -1,0 +1,152 @@
+﻿paginas de codigos html
+https://getbootstrap.com/docs/4.5/getting-started/introduction/
+
+pagina editor html
+https://htmled.it/or/
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <style>.container{width: 350px!important;}</style>
+</head> 
+<body>
+<form>
+<div class="container">
+  <div class="abs-center">
+    <form action="#" class="border p-3 form">
+      <div class="form-group">
+<h1>Accede como candidato</h1>
+<div class="form-group">
+<label for="exampleInputEmail1">Email</label>
+<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombre"required>
+<small id="emailHelp" class="form-text text-muted"></small>
+</div>
+<div class="form-group">
+<label for="exampleInputPassword1">Contraseña</label>
+<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombre"required>
+</div>
+<div class="form-group form-check">
+<input type="checkbox" class="form-check-input" id="exampleCheck1" name="nombre"required>
+<label class="form-check-label" for="exampleCheck1">Mantener mi sesión abierta</label>
+<label for="exampleFormControlFile1">Más Info</label>
+<br>
+<button type="submit" class="btn btn-primary">INICIA SESIÓN</button></br>
+     </div>
+      <div class="form-group">
+      </div>
+    </form>
+  </div>
+</div>
+</form>
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------
+source project_finalenv/bin/actívate
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+en todos los input debo hacer los name (name="nombre"required>)
+en todos los form (action="" method="post"novalidate>)
+esto se debe ser porque es necesario para que se envie la informacion a un archivo donde se recoge como una base de datos
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Codigos buenos a trabajar!
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<style>.container{width: 350px!important;}</style>
+</head> 
+<body>
+<form class="needs-validation" action="" method="post"novalidate>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom01">Nombre</label>
+      <input type="text" class="form-control" id="validationCustom01" name="nombre"required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom02">Apellidos</label>
+      <input type="text" class="form-control" id="validationCustom02" name="nombre"required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">Ciudad</label>
+      <input type="text" class="form-control" id="validationCustom03" name="nombre"required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom04">Municipio</label>
+      <select class="custom-select" id="validationCustom04" required>
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">Codigo postal</label>
+      <input type="text" class="form-control" id="validationCustom05" name="nombre"required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" name="nombre"required>
+      <label class="form-check-label" for="invalidCheck">
+        Mantener mi sesión abierta
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">INICIAR SESIÓN</button>
+</form>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+</form>
+</body>
+</html>
+------------------------------------------------------------------------------------------------------------------
+<a href="url">link text</a>
+
+django-admin.py startproject cap2_project . 
+python3 manage.py runserver 
+source cap2_projectenv/bin/activate
+
+path('about/', views.patata, name='about'),
+
+

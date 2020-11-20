@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="abs-center">
+    <form action="#" class="border p-3 form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control">
+      </div>
+    </form>
+  </div>
+</div>
+---------------------------------------------------------------------------------------------------
+
+ size="4" maxlength="4">
+
+<input type="password" class="form-control" id="exampleInputPassword1" name="nombre"required>
+<style>.container{width: 350px!important;}</style>
+
+en estilos hacer un ccs floar asi podemos poner dos cajas flotantes
+
+¿Has olvidado tu contraseña?
+
+-------------------------------------------------------------------------------------------------------------------------
+<div class="form">
+  <div class="form-toggle"></div>
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>Accede como candidato</h1>
+    </div>
+    <div class="form-content">
+      <form>
+        <div class="form-group">
+          <label for="username">Email</label>
+          <input type="text" id="username" name="username" required="required">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required="required">
+        </div>
+        <div class="form-group">
+          <label class="form-remember">
+            <input type="checkbox">Remember Me
+          </label><a class="form-recovery" href="#">Forgot Password?</a>
+        </div>
+        <div class="form-group">
+          <button type="submit">Log In</button>
+        </div>
+      </form>
+    </div>
