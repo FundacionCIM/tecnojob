@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Crear CV {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <input class="btn-gen" type="button" value="Generar CV" name="Generar CV" onclick="pedirDatos(this)" />
+    <form class="form" action="maneja_formulario.php" method="get">
+        {% csrf_token %}
+        <h1>CURRICULUM VITAE</h1>
+        <fieldset>
+            <legend>DATOS PERSONALES</legend>
+            <label for="title">T&iacute;tulo</label>
+            <select id="status" name="title">
+                <option value="" selected="selected">- selecciona -</option>
+                <option value="señor">Sr.</option>
+                <option value="señora">Sra.</option>
+            </select>
+            <label class="input" for="name">Nombre</label>
+            <input id="input1" type="text" name="nombre" size="8" minlength="3" maxlength="10" pattern="[A-Za-z]{3,10}" placeholder="" onkeyup="validaNombre(this)" title="Introduce entre 3 y 10 letras" required=""/>
+            <label class="input" for="sName">Apellidos</label>
+            <input id="input2" type="text" name="apellidos" size="8" maxlength="15" placeholder="" onkeyup="validaApellido(this)" title="Introduce entre 3 y 15 letras" required=""/>
+            <label class="input" for="dni">DNI</label>
+            <input id="input3" type="text" name="dni" size="9" maxlength="9" placeholder="" onkeyup="validaNif(this)" title="Introduce 8 números y una letra" required="" /> <label class="input" for="street">Direcci&oacute;n</label>            <input id="input4" type="text" name="calle" size="25" minlength="15" maxlength="25" placeholder="" onkeyup="validaDir(this)" required="" /> <label class="input" for="phone">Tel&eacute;fono</label> <input id="input5" type="text" name="telefono"
+                size="9" maxlength="9" pattern="[0-9]{9}" placeholder="" onkeyup="validaTel(this)" title="Número de 9 cifras" required="" /> <label class="input" for="email">Correo electr&oacute;nico</label> <input id="input6" type="text" name="email" placeholder=""
+                onkeyup="validaMail(this)" required="" /> <label class="input" for="birthday">Fecha de nacimiento</label> <input id="datepicker" type="date" name="birthday" size="8" maxlength="8" placeholder="" onkeyup="validarCampo(this)" required="" />            <label for="status">Estado civil</label> <select id="input7" name="status"><option value="" selected="selected">- selecciona -</option><option value="married">Casado/a</option><option value="single">Soltero/a</option></select></fieldset>
+        <fieldset>
+            <legend>EXPERIENCIA</legend> <input class="btn" type="button" value="Añade experiencia" onclick="insertarExp()" />
+            <div id="expInput"></div>
+        </fieldset>
+        <fieldset>
+            <legend>IDIOMAS</legend> <input class="btn" type="button" value="Añade idiomas" onclick="insertarLang()" />
+            <div id="langInput"></div>
+        </fieldset>
+        <fieldset>
+            <legend>AFICIONES</legend> <input class="btn" type="button" value="Añade pasatiempos" onclick="insertarHobb()" />
+            <div id="hobbInput"></div>
+        </fieldset>
+        <fieldset>
+            <legend>ENLACES DE INTER&Eacute;S</legend> <input class="btn" type="button" value="Añade enlaces de interés" onclick="insertarLink()" />
+            <div id="linkInput"></div>
+        </fieldset>
+        <footer><input class="btn-submit" id="enviar" type="submit" value="Generar CV" name="Generar CV" onclick="print()" /> <input class="btn-submit" id="borrar" type="reset" value="Borrar CV" /></footer>
+    </form>
+{% endblock %}

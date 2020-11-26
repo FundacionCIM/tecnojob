@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Crear Oferta {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form action="" class="mt-3" autocomplete="off" method="POST">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <fieldset>
+            <legend>
+                <input type="text" name="nombre_ofrt" placeholder="titulo">
+                <textarea name="descrip" cols="30" rows="10"></textarea>
+                <input type="number" name="salario" placeholder="salario">
+                <input type="number" name="sal_min" placeholder="salario minimo">
+                <input type="number" name="sal_max" placeholder="salario maximo">
+                <input type="text" name="tcontr" placeholder="tipo de contrato">
+                <input type="text" name="periodo" placeholder="periodo del contrato">
+                <input type="text" name="url" placeholder="url de la oferta">
+                <input type="text" name="site" placeholder="sitio web de la oferta">
+                <input type="date" name="fecha_publi" placeholder="fecha de publicación">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </legend>
+        </fieldset>
+    </form>
+
+    {% if list_view %}
+<!--            {{ offer_list_view }}-->
+            {% for offer in <list></list>_view %}
+<!--                {% if forloop.first %}-->
+<!--                    <div class="row">-->
+<!--                {% endif %}-->
+                <div class="col-12">
+                    <div class="card">
+                        <img src="{{ offer.imagen.url }}" height="180" class="card-img-top" alt="{{ offer.titulo }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ offer.nombre_ofrt }}</h5>
+                            <hr>
+                            <h6 class="card-subtitle">Empresa: {{ offer.company }}</h6>
+                            <p class="card-text">Publicado el: {{ offer.fecha_publi }}</p>
+                        </div>
+<!--                        <div class="card-footer">-->
+<!--                            {% if user == offer.autor %}-->
+<!--                                <a href="{% url 'eliminar_offer' offer.id %}" class="btn btn-danger">Eliminar post</a>-->
+<!--                            {% endif %}-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                <br>
+<!--                {% if forloop.counter|divisibleby:3 %}-->
+<!--                    </div><div class="row"></div>-->
+<!--                {% endif %}-->
+<!--                {% if forloop.last %}-->
+<!--                    </div>-->
+<!--                {% endif %}-->
+            {% endfor %}
+<!--            {% include "paginacion.html" %}-->
+        {% else %}
+            <div class="alert alert-danger">No hay nada aquí</div>
+        {% endif %}
+
+
+{% endblock %}
