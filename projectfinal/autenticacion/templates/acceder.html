@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Acceso {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form action="" class="mt-2" autocomplete="off" method="POST">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-success">Iniciar sesión</button>
+    </form>
+{% endblock %}
