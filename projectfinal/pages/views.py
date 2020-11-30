@@ -32,13 +32,13 @@ def index(request):
 
     if keyword is not None and location is not None:
         api_offer_list = get_offers_api(keyword, location)
-        db_offer_list = get_offers_db(keyword, location)
+        #db_offer_list = get_offers_db(keyword, location)
 
         save_to_db(request, api_offer_list)
         offer_list_view = api_offer_list
-        list_view = db_offer_list + api_offer_list
+        #list_view = db_offer_list + api_offer_list
     print(offer_list_view)
-    return render(request, "oferta_empleo.html", {"offer_list_view": list_view})
+    return render(request, "oferta_empleo.html", {"offer_list_view": offer_list_view})
 
 
 # Función para obtener datos de la api
@@ -90,7 +90,7 @@ def get_offers_db(keyword, location):
         # Devolvemos la lista de resultados
         # db_offer_list = []
 
-        cursor.execute("select * from oferta_provincia where titulo = %s and nombre_prov %s", (keyword, location,))
+        cursor.execute("select * from oferta, provincia where oferta.nombre_ofrt = %s and provincia.nombre_prov %s", (keyword, location,))
         result = cursor.fetchall()
         return result
         # db_offer_list.append(result)
