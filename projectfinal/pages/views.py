@@ -136,6 +136,39 @@ def save_to_db(request, api_offer_list):
     #     except:
     #         # Revertir en caso de que haya algún error
     #         connection.rollback()
+#
+# def index(request):
+#     # return HttpResponse('Hola bienvenid@ a TecnoJob')
+#     return render(request, "searcher.html")
+
+
+# def offer_insert(request):
+#     conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469W", host="localhost", port=5432)
+#     cursor = conn.cursor()
+#     cursor.execute("insert into offer (title, salary, remote, publi_date, company_id, cat_id) values (%s, %s, %s, %s, %s, %s);", ('DBA', 10000, True, '2020-11-28', 4, 1))
+#     conn.commit()
+#     cursor.close()
+#     conn.close()
+#     return HttpResponse('Registro Insertado')
+#     # return render(request, "offer_create.html")
+#
+#
+# def offer_select(request):
+#     conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469W", host="localhost", port=5432)
+#     cursor = conn.cursor()
+#     cursor.execute("select * from offer;")
+#     return HttpResponse(cursor.fetchall())
+#     # return render(request, "offer_read.html")
+#
+#
+# def offer_update(request):
+#     conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469W", host="localhost", port=5432)
+#     return render(request, "offer_update.html")
+#
+#
+# def offer_delete(request):
+#     conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469W", host="localhost", port=5432)
+#     return render(request, "offer_delete.html")
 
 
 def crear_oferta(request):

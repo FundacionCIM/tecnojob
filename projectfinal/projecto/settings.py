@@ -46,7 +46,13 @@ INSTALLED_APPS = [
 
     # App propias
     'pages',
+    'category_crud',
     'autenticacion',
+    'city_crud',
+    'candidate_crud',
+    'company_crud',
+    'cv_crud',
+    'province_crud'
 ]
 
 MIDDLEWARE = [
