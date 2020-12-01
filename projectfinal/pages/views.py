@@ -63,13 +63,13 @@ def get_offers_api(keyword, location):
 
     for elm in search_results['jobs']:
         offer = {
-            "nombre_ofrt": elm.get('title', None),
+            "title": elm.get('title', None),
             "company": elm.get('company', None),
-            "salario": elm.get('salary', None),
+            "salary": elm.get('salary', None),
             "sal_min": elm.get('salary_min', None),
             "sal_max": elm.get('salary_max', None),
-            "fecha_publi": elm.get('date', None),
-            "descrip": elm.get('description', None),
+            "publi_date": elm.get('date', None),
+            "description": elm.get('description', None),
             "url": elm.get('url', None),
             "site": elm.get('site', None)
         }
@@ -80,7 +80,7 @@ def get_offers_api(keyword, location):
 
 # Función para obtener datos de la BD
 def get_offers_db(keyword, location):
-    db = psycopg2.connect(dbname="tecnojob", user="postgres", password=47601469, host="localhost", port=5432)
+    db = psycopg2.connect(dbname="tecnojob00", user="postgres", password=47601469, host="localhost", port=5432)
 
     # preparar un objeto de cursor usando el método cursor()
     # cursor = db.cursor()
@@ -101,7 +101,7 @@ def get_offers_db(keyword, location):
 
 # Guardar en BD
 def save_to_db(request, api_offer_list):
-    db = psycopg2.connect(dbname="tecnojob", user="postgres", password=47601469, host="localhost", port=5432)
+    db = psycopg2.connect(dbname="tecnojob00", user="postgres", password=47601469, host="localhost", port=5432)
 
     # preparar un objeto de cursor usando el método cursor()
     cursor = db.cursor()

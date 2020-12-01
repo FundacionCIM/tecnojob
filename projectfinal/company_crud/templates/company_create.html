@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %} TecnoJob | Crear Empresa {% endblock %}
+
+{% block content %}
+    <style>
+        a:link, a:visited, a:active {
+            color: black;
+            text-decoration: none;
+        }
+
+        input {
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    {{ empresas.0.c_name }}
+    <fieldset>
+        <legend>Crear Empresa</legend>
+        <form action="{% block form %}{% endblock %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% block name %}{% endblock %}
+            <input type="hidden" name="id">
+            <input type="text"   name="name"  placeholder="{% block name01 %}Nombre{% endblock %}"><br>
+            <input type="text"   name="cif"   placeholder="{% block name02 %}CIF{% endblock %}"><br>
+            <input type="email"  name="email" placeholder="{% block name03 %}Email{% endblock %}"><br>
+            <input type="url"    name="url"   placeholder="{% block name04 %}Site{% endblock %}"><br>
+            <input type="file"   name="filename"><br>
+            <input type="submit" value="{% block button %} GUARDAR {% endblock %}">
+        </form>
+        <hr>
+        <br>
+        <table style="width:100%">
+            <tr>
+                <th>Empresa</th>
+                <th>CIF</th>
+                <th>Email</th>
+                <th>Web</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for empresa in empresas %}
+                <tr>
+                    <td>{{ empresa.c_name }}</td>
+                    <td>{{ empresa.cif }}</td>
+                    <td>{{ empresa.email }}</td>
+                    <td>{{ empresa.site }}</td>
+                    <td>
+                        <button><a href="{% url 'borrar_empresa' empresa.company_id %}">ELIMINAR</a></button>
+                    </td>
+                    <td>
+                        <button><a href="{% block direccion %} {% url 'modificar_empresa' empresa.company_id %} {% endblock %}">ACTUALIZAR</a></button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+    </fieldset>
+{% endblock %}
