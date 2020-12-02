@@ -6,7 +6,7 @@ Buscador de ofertas de empleo - proyecto final
 Vamos a recoger ofertas de trabajo desde una API de búsqueda de trabajos.
 
 *   Parte 1: Creación de una base de datos de trabajos con una API.
-*   Parte 2: Creación de un web scraping para mejorar la base de datos.
+*   Parte 2: Hacer web scraping para afinar la info que va a la BBDD.
 *   Parte 3: Encapsular todo el código en Django.
 *   Parte 4: Crear la app de generar CV con los datos de usuario.
 
