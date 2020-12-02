@@ -1,5 +1,6 @@
 from django.shortcuts import redirect
 from pages.views import *
+from django.contrib import messages
 
 import psycopg2
 import psycopg2.extras
@@ -27,6 +28,7 @@ def company_view(request):
         cursor.close()
         conn.close()
 
+        messages.success(request, "El registro se ha guardado correctamente")
         return redirect("mostrar_empresa")
     else:
         return render(request, "company_create.html", company_select())
@@ -57,6 +59,7 @@ def company_delete(request, id):
     cursor.close()
     conn.close()
 
+    messages.success(request, "El registro se ha borrado correctamente")
     return redirect("mostrar_empresa")
 
 
@@ -95,5 +98,5 @@ def company_update(request, id):
     cursor.close()
     conn.close()
 
-    # return redirect("mostrar_empresa")
-    return render(request, "company_create.html")
+    return redirect("mostrar_empresa")
+    # return render(request, "company_create.html")

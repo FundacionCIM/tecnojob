@@ -1,6 +1,30 @@
 {% extends 'base.html' %}
 
+{#{% load static %}#}
+
 {% block title %} TecnoJob | Crear Empresa {% endblock %}
+
+{% block js %}
+    <script>
+        function eliminarEmpresa(id) {
+            Swal.fire({
+                "title": "¿Estás seguro?",
+                "text": "Esta acción no se puede deshacer",
+                "icon": "question",
+                "showCancelButton": true,
+                "cancelButtonText": "No, cancelar",
+                "confirmButtonText": "Sí, eliminar",
+                "reverseButtons": true,
+                "confirmButtonColor": "#dc3545"
+            })
+            .then(function(result) {
+                if(result.isConfirmed) {
+                    window.location.href = "eliminar/"+id
+                }
+            })
+        }
+    </script>
+{% endblock %}
 
 {% block content %}
     <style>
@@ -47,10 +71,10 @@
             {% csrf_token %}
             {% block name %}{% endblock %}
             <input type="hidden" name="id">
-            <input type="text"   name="name"  placeholder="{% block name01 %}Nombre{% endblock %}"><br>
-            <input type="text"   name="cif"   placeholder="{% block name02 %}CIF{% endblock %}"><br>
-            <input type="email"  name="email" placeholder="{% block name03 %}Email{% endblock %}"><br>
-            <input type="url"    name="url"   placeholder="{% block name04 %}Site{% endblock %}"><br>
+            <input type="text"   name="name"  value="{% block name01 %}Nombre{% endblock %}"><br>
+            <input type="text"   name="cif"   value="{% block name02 %}CIF{% endblock %}"><br>
+            <input type="email"  name="email" value="{% block name03 %}Email{% endblock %}"><br>
+            <input type="url"    name="url"   value="{% block name04 %}Site{% endblock %}"><br>
             <input type="file"   name="filename"><br>
             <input type="submit" value="{% block button %} GUARDAR {% endblock %}">
         </form>
@@ -72,7 +96,7 @@
                     <td>{{ empresa.email }}</td>
                     <td>{{ empresa.site }}</td>
                     <td>
-                        <button><a href="{% url 'borrar_empresa' empresa.company_id %}">ELIMINAR</a></button>
+                        <button><a href="#" onclick="eliminarEmpresa({{ empresa.company_id }})">ELIMINAR</a></button>
                     </td>
                     <td>
                         <button><a href="{% block direccion %} {% url 'modificar_empresa' empresa.company_id %} {% endblock %}">ACTUALIZAR</a></button>
@@ -82,4 +106,6 @@
         </table>
         <br><br>
     </fieldset>
+
+{#    <script type="module" src="{% static 'js/scripts.js' %}"></script>#}
 {% endblock %}
