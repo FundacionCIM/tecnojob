@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+
+{% block title %} TecnoJob | Crear Empresa {% endblock %}
+
+{% block js %}
+    <script>
+        function eliminarEmpresa(id) {
+            Swal.fire({
+                "title": "¿Estás seguro?",
+                "text": "Esta acción no se puede deshacer",
+                "icon": "question",
+                "showCancelButton": true,
+                "cancelButtonText": "No, cancelar",
+                "confirmButtonText": "Sí, eliminar",
+                "reverseButtons": true,
+                "confirmButtonColor": "#dc3545"
+            })
+                .then(function (result) {
+                    if (result.isConfirmed) {
+                        window.location.href = "eliminar/" + id
+                    }
+                })
+        }
+    </script>
+
+    <script>
+        jQuery(function ($) {
+
+            jQuery(document).ready(function () {
+
+                $(".add-group1").click(function () {
+                    $('.group1').clone().insertBefore(".add-group1").removeClass("group1");
+                });
+
+                $(".add-group2").click(function () {
+                    $('.group2').clone().insertBefore(".add-group2").removeClass("group2");
+                });
+
+                $(".add-group3").click(function () {
+                    $('.group3').clone().insertBefore(".add-group3").removeClass("group3");
+                });
+
+                $(".add-group4").click(function () {
+                    $('.group4').clone().insertBefore(".add-group4").removeClass("group4");
+                });
+
+                $(".add-group5").click(function () {
+                    $('.group5').clone().insertBefore(".add-group5").removeClass("group5");
+                });
+
+                $(".add-group6").click(function () {
+                    $('.group6').clone().insertBefore(".add-group6").removeClass("group6");
+                });
+
+                $(".rem-group6").click(function () {
+                    console.log(document.querySelectorAll(".group6"))
+                });
+
+                $("#upload").on('change', function (event) {
+
+                    let preview = $("#preview>img")[0];
+
+                    const file = event.target.files[0];
+                    let reader = new FileReader(); // Creating reader instance from FileReader() API
+                    reader.addEventListener("load", function (event) { // Setting up base64 URL on image
+                        preview.src = (event.target.result)
+                    }, false);
+
+                    reader.readAsDataURL(file)
+                });
+
+
+                $("input").map(i => {
+
+                    $('input')[i].addEventListener('keydown', event => {
+
+                        $.ajax({
+                            type: "POST",
+                            url: 'http://testowanie.dojczland.info/cv_generator/post.php',
+                            data: $('#cv').serialize(),
+                            success: function (response) {
+                                console.log(response);
+                            }
+                        });
+                    })
+                })
+
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <style>
+        .main {
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .header {
+
+            width: 100%;
+            margin-top: 15px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 2em;
+        }
+
+        #preview > img {
+
+            max-width: 200px;
+        }
+    </style>
+
+    <div class="container main">
+
+        <div class="header">CV Generator</div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-horizontal" target="_blank" id="cv" enctype="multipart/form-data" role="form"
+                      method="post" action="http://127.0.0.1/cv_generator_milempicki/post.php">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h3>
+                                <i class="fa fa-user">
+                                </i>
+                                Datos personales
+                            </h3>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="text">
+                                    Nombre:
+                                </label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="name" name="name"
+                                           placeholder="Andres" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="text">
+                                    Teléfono:
+                                </label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="phone" name="phone"
+                                           placeholder="639530853" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="text">
+                                    Email:
+                                </label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           placeholder="andresgqjob@gmail.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="text">
+                                    Fecha de Nacimiento:
+                                </label>
+                                <div class="col-sm-8">
+                                    <input type="date" class="form-control" id="data" name="bdate"
+                                           placeholder="13/07/1985" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="text">
+                                    Nacionalidad:
+                                </label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="data" name="bcity"
+                                           placeholder="Catalana" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="text">
+                                    Lugar de residencia:
+                                </label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="text" name="city"
+                                           placeholder="c/ San Silvestre, 21"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 ">
+                            <br>
+                            <div id="preview">
+                                <img src="">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="exampleInputFile">
+                                    Publique su foto aquí. (Opcional)
+                                </label>
+                                <input type="file" name="image" class="text-center" id="upload">
+                            </div>
+                        </div>
+                    </div>
+                    <h3>
+                        <i class="fa fa-user">
+                        </i>
+                        Formación Académica
+                    </h3>
+                    <div class="row group1">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="education_dates[]" placeholder="Fecha / Periodo de tiempo">
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="education_school[]"
+                                   placeholder="proporcione el nombre de la escuela / universidad o curso completado">
+                            <input type="text" class="form-control" style="font-size:14px;" id="email"
+                                   name="education_awards[]"
+                                   placeholder="(opcional) título o grado obtenido, facultad, campo de estudio, perfil">
+                        </div>
+                    </div>
+                    <p class="text-primary add-group1">
+                        + Crear un nuevo campo
+                    </p>
+                    <h3>
+                        <i class="fa fa-line-chart">
+                        </i>
+                        Experiencia Laboral
+                    </h3>
+                    <div class="row group2">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="experience_dates[]" placeholder="fecha / período de tiempo">
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="experience_companies[]"
+                                   placeholder="proporcionar el nombre de la empresa y el puesto que ocupa">
+                            <input type="text" class="form-control" style="font-size:14px;" id="email"
+                                   name="experience_position[]"
+                                   placeholder="(opcional) descripción del trabajo, deberes, habilidades adquiridas y experiencia">
+                        </div>
+                    </div>
+                    <p class="text-primary add-group2">
+                        + Crear un nuevo campo
+                    </p>
+                    <h3>
+                        <i class="fa fa-file">
+                        </i>
+                        Formación complementaria
+                    </h3>
+                    <div class="row group3">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="course_dates[]"
+                                   placeholder="fecha / período de tiempo">
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="course_names[]"
+                                   placeholder="introduzca aquí el tipo de curso, formación o logro">
+                            <input type="text" class="form-control" style="font-size:14px;" id="email"
+                                   name="course_info[]"
+                                   placeholder="(opcional) información adicional">
+                        </div>
+                    </div>
+                    <p class="text-primary add-group3">
+                        + Crear un nuevo campo
+                    </p>
+                    <h3>
+                        <i class="fa fa-file">
+                        </i>
+                        Idiomas
+                    </h3>
+                    <div class="row group4">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="languages_names[]" placeholder="Inglés">
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" style="font-size:15px;" id="email"
+                                   name="languages_level[]" placeholder="nivel de avance (opcional)">
+                        </div>
+                    </div>
+                    <p class="text-primary add-group4">
+                        + Añadir Idioma
+                    </p>
+                    <h3>
+                        <i class="fa fa-area-chart">
+                        </i>
+                        Conocimientos
+                    </h3>
+                    <div class="row group5">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" style="font-size:15px;" name="skills[]"
+                                   placeholder="HTML5">
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" style="font-size:15px;" name="skills_info[]"
+                                   placeholder="información adicional: (Opcional)">
+                        </div>
+                    </div>
+                    <p class="text-primary add-group5">
+                        + Añadir conocimiento
+                    </p>
+                    <h3>
+                        <i class="fa fa-area-chart">
+                        </i>
+                        Intereses
+                    </h3>
+                    <div class="row group6">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" style="font-size:15px;" name="interests[]"
+                                   placeholder="roller skate">
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" style="font-size:15px;" name="interests_info[]"
+                                   placeholder="información adicional: (Opcional)">
+                        </div>
+
+                    </div>
+                    <p class="text-primary add-group6">
+                        + Añadir
+                    </p>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                            <button id="catit" type="submit" class="btn btn-primary btn-lg btn-block" id="generate">
+                                <i class="fa fa-share">
+                                </i>
+                                Generar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}
