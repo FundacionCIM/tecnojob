@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4696c2ae-d0b0-4393-9374-4b3fc583ffe2" name="Default Changelist" comment="David">
+      <change afterPath="$PROJECT_DIR$/projectfinal/province_crud/templates/province_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/province_crud/templates/province_update" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,17 +30,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="overd &lt;overdavid.odlm@gmail.com&gt;" />
+        <option value="David" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="42270708-f33d-431b-9e9f-61610b61650a" />
   <component name="ProjectId" id="1lMs1QKbXgBOYZZ6A77SaSdPtUm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607418079541</updated>
       <workItem from="1607418080600" duration="315000" />
-      <workItem from="1607418840992" duration="507000" />
+      <workItem from="1607418840992" duration="1754000" />
     </task>
     <task id="LOCAL-00001" summary="David">
       <created>1607419013658</created>
@@ -65,7 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607419276679</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="David">
+      <created>1607419402580</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607419402580</updated>
+    </task>
+    <task id="LOCAL-00004" summary="David">
+      <created>1607423854242</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607423854242</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,13 +112,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="David" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="367" y="392" key="#Notifications" timestamp="1607419347720">
+    <state x="367" y="392" key="#Notifications" timestamp="1607423871012">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="367" y="392" key="#Notifications/0.0.1680.1010@0.0.1680.1010" timestamp="1607419347720" />
-    <state x="221" y="301" key="Vcs.Push.Dialog.v2" timestamp="1607419022116">
+    <state x="367" y="392" key="#Notifications/0.0.1680.1010@0.0.1680.1010" timestamp="1607423871012" />
+    <state x="409" y="310" key="FileChooserDialogImpl" timestamp="1607423828659">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="221" y="301" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1607419022116" />
+    <state x="409" y="310" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1607423828659" />
+    <state x="221" y="86" width="816" height="749" key="Vcs.Push.Dialog.v2" timestamp="1607419440166">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="221" y="86" width="816" height="749" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1607419440166" />
   </component>
 </project>
