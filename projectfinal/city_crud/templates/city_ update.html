@@ -1,12 +1,12 @@
 {% extends 'city_create.html' %}
 
-{% block form %} {% url 'actualizar_empresa' id_empresa %} {% endblock %}
+{% block form %} {% url 'actualizar_ciudad' id_empresa %} {% endblock %}
 
-{% block name01 %} {{ empresas.0.1 }} {% endblock %}
-{% block name02 %} {{ empresas.0.2 }} {% endblock %}
-{% block name03 %} {{ empresas.0.3 }} {% endblock %}
-{% block name04 %} {{ empresas.0.4 }} {% endblock %}
-{% block name05 %} {{ empresas.0.5 }} {% endblock %}
+{% block name01 %} {{ ciudad.0.1 }} {% endblock %}
+{% block name02 %} {{ ciudad.0.2 }} {% endblock %}
+{% block name03 %} {{ ciudad.0.3 }} {% endblock %}
+{% block name04 %} {{ ciudad.0.4 }} {% endblock %}
+{% block name05 %} {{ ciudad.0.5 }} {% endblock %}
 
 {% block button %} ACTUALIZAR {% endblock %}
-{% block direccion %} {% url 'mostrar_empresa' %} {% endblock %}
+{% block direccion %} {% url 'mostrar_ciudad' %} {% endblock %}

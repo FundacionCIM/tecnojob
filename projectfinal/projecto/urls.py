@@ -14,4 +14,6 @@ urlpatterns = [
     path('empresas/',   include("company_crud.urls")),
     path('curriculum/', include("cv_crud.urls")),
     path('provincias/', include("province_crud.urls")),
+    path('cuidades/',   include("city_crud.urls")),
+    # path('candidato/',  include("candidate_crud.urls")),
 ]

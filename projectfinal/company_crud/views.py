@@ -69,8 +69,10 @@ def transition_update(request, id):
     cursor.execute(f"SELECT * FROM company WHERE company_id = %s", (id,))
 
     empresas = cursor.fetchall()
-    params = {"empresas": empresas,
-              "id_empresa": id}
+    params = {
+        "empresas": empresas,
+        "id_empresa": id
+    }
 
     conn.commit()
     cursor.close()

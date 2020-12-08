@@ -57,43 +57,43 @@ def province_delete(request, id):
     conn.close()
 
     messages.success(request, "El registro se ha borrado correctamente")
+    return redirect("mostrar_empresa")
+
+
+def p_transition_update(request, id):
+    conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+
+    cursor.execute(f"SELECT * FROM province WHERE prov_id = %s", (id,))
+
+    provincias = cursor.fetchall()
+    params = {
+        "provincias": provincias,
+        "prov_id": id
+    }
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return render(request, "province_update.html", params)
+
+
+def province_update(request, id):
+
+    conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+
+    updateSQL = f"UPDATE company SET p_name=%s WHERE prov_id={id};"
+    getData = (
+        request.POST.get("p_name",  default=None)
+    )
+
+    cursor.execute(updateSQL, getData)
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+
     return redirect("mostrar_provincia")
-#
-#
-# def transition_update(request, id):
-#     conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
-#     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-#
-#     cursor.execute(f"SELECT * FROM province WHERE prov_id = %s", (id,))
-#
-#     empresas = cursor.fetchall()
-#     params = {"empresas": empresas,
-#               "id_empresa": id}
-#
-#     conn.commit()
-#     cursor.close()
-#     conn.close()
-#
-#     return render(request, "province_update.html", params)
-#
-#
-# def province_update(request, id):
-#     conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
-#     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-#
-#     updateSQL = f"UPDATE company SET c_name=%s, cif=%s, email=%s, site=%s WHERE province_id={id};"
-#     getData = (
-#         request.POST.get("name",  default=None),
-#         request.POST.get("cif",   default=None),
-#         request.POST.get("email", default=None),
-#         request.POST.get("url",   default=None)
-#     )
-#
-#     cursor.execute(updateSQL, getData)
-#
-#     conn.commit()
-#     cursor.close()
-#     conn.close()
-#
-#     return redirect("mostrar_empresa")
-    # return render(request, "province_create.html")
+    # return render(request, "company_create.html")

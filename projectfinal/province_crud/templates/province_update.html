@@ -1,12 +1,12 @@
 {% extends 'province_create.html' %}
 
-{% block form %} {% url 'actualizar_empresa' id_empresa %} {% endblock %}
+{% block form %} {% url 'actualizar_provincia' id_empresa %} {% endblock %}
 
-{% block name01 %} {{ empresas.0.1 }} {% endblock %}
-{% block name02 %} {{ empresas.0.2 }} {% endblock %}
-{% block name03 %} {{ empresas.0.3 }} {% endblock %}
-{% block name04 %} {{ empresas.0.4 }} {% endblock %}
-{% block name05 %} {{ empresas.0.5 }} {% endblock %}
+{% block name01 %} {{ provincias.0.1 }} {% endblock %}
+{% block name02 %} {{ provincias.0.2 }} {% endblock %}
+{% block name03 %} {{ provincias.0.3 }} {% endblock %}
+{% block name04 %} {{ provincias.0.4 }} {% endblock %}
+{% block name05 %} {{ provincias.0.5 }} {% endblock %}
 
 {% block button %} ACTUALIZAR {% endblock %}
-{% block direccion %} {% url 'mostrar_empresa' %} {% endblock %}
+{% block direccion %} {% url 'mostrar_provincia' %} {% endblock %}
