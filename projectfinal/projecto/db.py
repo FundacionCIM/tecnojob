@@ -1,9 +1,9 @@
 PGSQL = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tecnojob00',
+        'NAME': 'remotejob',
         'USER': 'postgres',
-        'PASSWORD': '47601469',
+        'PASSWORD': '3640',
         'HOST': 'localhost',
         'PORT': '5432'
     }

@@ -9,7 +9,7 @@ import psycopg2.extras
 # Create your views here.
 def city_view(request):
     if request.method == 'POST':
-        conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469", host="localhost", port=5432)
+        conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
 
         cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
@@ -35,7 +35,7 @@ def city_view(request):
 
 
 def city_select():
-    conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469", host="localhost", port=5432)
+    conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
     cursor.execute("SELECT * FROM city ORDER BY c_name;")
@@ -50,7 +50,7 @@ def city_select():
 
 
 def city_delete(request, id):
-    conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469", host="localhost", port=5432)
+    conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
     cursor.execute(f"DELETE FROM city WHERE city_id=%s", (id,))
@@ -64,7 +64,7 @@ def city_delete(request, id):
 
 
 def transition_update(request, id):
-    conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469", host="localhost", port=5432)
+    conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
     cursor.execute(f"SELECT * FROM city WHERE city_id = %s", (id,))
@@ -81,7 +81,7 @@ def transition_update(request, id):
 
 
 def city_update(request, id):
-    conn = psycopg2.connect(dbname="tecnojob00", user="postgres", password="47601469", host="localhost", port=5432)
+    conn = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
     cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
     updateSQL = f"UPDATE company SET c_name=%s, cif=%s, email=%s, site=%s WHERE company_id={id};"

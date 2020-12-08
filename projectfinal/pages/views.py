@@ -80,7 +80,7 @@ def get_offers_api(keyword, location):
 
 # Función para obtener datos de la BD
 def get_offers_db(keyword, location):
-    db = psycopg2.connect(dbname="tecnojob00", user="postgres", password=47601469, host="localhost", port=5432)
+    db = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
 
     # preparar un objeto de cursor usando el método cursor()
     # cursor = db.cursor()
@@ -101,7 +101,7 @@ def get_offers_db(keyword, location):
 
 # Guardar en BD
 def save_to_db(request, api_offer_list):
-    db = psycopg2.connect(dbname="tecnojob00", user="postgres", password=47601469, host="localhost", port=5432)
+    db = psycopg2.connect(dbname="remotejob", user="postgres", password="3640", host="localhost", port=5432)
 
     # preparar un objeto de cursor usando el método cursor()
     cursor = db.cursor()

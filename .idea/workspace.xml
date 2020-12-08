@@ -19,13 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4696c2ae-d0b0-4393-9374-4b3fc583ffe2" name="Default Changelist" comment="Init">
+    <list default="true" id="4696c2ae-d0b0-4393-9374-4b3fc583ffe2" name="Default Changelist" comment="Init01">
+      <change beforePath="$PROJECT_DIR$/.idea/tecnojob.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tecnojob.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/candidate_crud/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/candidate_crud/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/city_crud/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/city_crud/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/company_crud/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/company_crud/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/cv_crud/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/cv_crud/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/pages/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/pages/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/pages/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/projecto/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/projecto/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/projecto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/projecto/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/province_crud/templates/province_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/province_crud/templates/province_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/province_crud/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/province_crud/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfinal/province_crud/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfinal/province_crud/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,17 +66,24 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/projectfinal/cv_crud" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\overd\PycharmProjects\tecnojob\projectfinal\cv_crud" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,7 +95,7 @@
       <updated>1607418079541</updated>
       <workItem from="1607418080600" duration="315000" />
       <workItem from="1607418840992" duration="3362000" />
-      <workItem from="1607425975878" duration="91000" />
+      <workItem from="1607425975878" duration="5557000" />
     </task>
     <task id="LOCAL-00001" summary="David">
       <created>1607419013658</created>
@@ -117,7 +139,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607425669070</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Init">
+      <created>1607426328967</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607426328967</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Init01">
+      <created>1607426365175</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607426365175</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,24 +174,25 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="David" />
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="Init01" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init01" />
   </component>
   <component name="WindowStateProjectService">
     <state x="367" y="392" key="#Notifications" timestamp="1607423871012">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="367" y="392" key="#Notifications/0.0.1680.1010@0.0.1680.1010" timestamp="1607423871012" />
-    <state x="409" y="310" key="FileChooserDialogImpl" timestamp="1607423828659">
+    <state x="409" y="310" key="FileChooserDialogImpl" timestamp="1607427963699">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="409" y="310" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1607423828659" />
-    <state x="138" y="208" key="SettingsEditor" timestamp="1607426065730">
+    <state x="409" y="310" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1607427963699" />
+    <state x="138" y="208" key="SettingsEditor" timestamp="1607430506207">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="138" y="208" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1607426065730" />
-    <state x="221" y="86" width="816" height="749" key="Vcs.Push.Dialog.v2" timestamp="1607425685934">
+    <state x="138" y="208" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1607430506207" />
+    <state x="221" y="86" width="816" height="749" key="Vcs.Push.Dialog.v2" timestamp="1607426378530">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="221" y="86" width="816" height="749" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1607425685934" />
+    <state x="221" y="86" width="816" height="749" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1607426378530" />
   </component>
 </project>

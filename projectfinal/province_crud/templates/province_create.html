@@ -66,20 +66,16 @@
         <br>
         <button class="btn btn-primary mb-4" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
-            Nueva Empresa
+            Nueva Provincia
         </button>
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
-                <h4>CREAR EMPRESA</h4>
+                <h4>CREAR PROVINCIA</h4>
                 <form action="{% block form %}{% endblock %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% block name %}{% endblock %}
                     <input type="hidden" name="id">
-                    <input type="text" name="name" value="{% block name01 %} Nombre {% endblock %}"><br>
-                    <input type="text" name="cif" value="{% block name02 %} CIF    {% endblock %}"><br>
-                    <input type="email" name="email" value="{% block name03 %} Email  {% endblock %}"><br>
-                    <input type="url" name="url" value="{% block name04 %} Site   {% endblock %}"><br>
-                    <input type="file" name="filename"><br>
+                    <input type="text" name="prov_name" value="{% block name01 %} Nombre {% endblock %}"><br>
                     <input type="submit" value="{% block button %} GUARDAR {% endblock %}">
                 </form>
             </div>
@@ -89,29 +85,23 @@
         <br>
         <table style="width:100%">
             <tr>
-                <th>Empresa</th>
-                <th>CIF</th>
-                <th>Email</th>
-                <th>Web</th>
+                <th>Provincia</th>
                 <th></th>
                 <th></th>
             </tr>
-            {% for empresa in empresas %}
+            {% for provincia in provincias %}
                 <tr>
-                    <td>{{ empresa.c_name }}</td>
-                    <td>{{ empresa.cif }}</td>
-                    <td>{{ empresa.email }}</td>
-                    <td>{{ empresa.site }}</td>
+                    <td>{{ provincia.p_name }}</td>
                     <td>
-                        <button><a href="#" onclick="eliminarEmpresa({{ empresa.company_id }})">ELIMINAR</a></button>
+                        <button><a href="#" onclick="eliminarEmpresa({{ provincia.prov_id }})">ELIMINAR</a></button>
                     </td>
                     <td>
                         <button><a
-                                href="{% block direccion %} {% url 'modificar_empresa' empresa.company_id %} {% endblock %}">ACTUALIZAR</a>
+                                href="{% block direccion %} {% url 'modificar_empresa' provincia.prov_id %} {% endblock %}">ACTUALIZAR</a>
                         </button>
                     </td>
                 </tr>
             {% endfor %}
         </table>
         <br><br>
-    {% en
+    {% endblock %}
